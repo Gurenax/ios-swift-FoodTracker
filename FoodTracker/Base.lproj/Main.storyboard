@@ -36,6 +36,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TF-vj-28G">
                                         <rect key="frame" x="0.0" y="66.5" width="151" height="30"/>
                                         <state key="normal" title="Set Default Label Text"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvw-oV-Arm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -51,6 +54,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mealNameLabel" destination="7Mb-ID-tvd" id="5xY-Ge-OZe"/>
+                        <outlet property="nameTextField" destination="nyo-2N-Iqm" id="Cqg-Um-klA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
