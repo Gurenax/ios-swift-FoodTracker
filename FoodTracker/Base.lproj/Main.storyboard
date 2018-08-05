@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Eaj-1O-qea">
-                                <rect key="frame" x="16" y="40" width="343" height="96.5"/>
+                                <rect key="frame" x="16" y="40" width="343" height="447.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mb-ID-tvd">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -40,6 +41,16 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvw-oV-Arm"/>
                                         </connections>
                                     </button>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="343" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="R2e-Tr-efX">
+                                        <rect key="frame" x="0.0" y="104.5" width="343" height="343"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="R2e-Tr-efX" secondAttribute="height" multiplier="1:1" id="tfd-MU-def"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="kU0-5p-GnD" appends="YES" id="afu-bR-wcl"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nyo-2N-Iqm" secondAttribute="trailing" id="KzC-HF-IsR"/>
@@ -57,11 +68,20 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="7Mb-ID-tvd" id="5xY-Ge-OZe"/>
                         <outlet property="nameTextField" destination="nyo-2N-Iqm" id="Cqg-Um-klA"/>
+                        <outlet property="photoImageView" destination="R2e-Tr-efX" id="TcC-Ae-TUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kU0-5p-GnD">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="hWl-XL-TvO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="107.49625187406298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="240" height="240"/>
+    </resources>
 </document>
